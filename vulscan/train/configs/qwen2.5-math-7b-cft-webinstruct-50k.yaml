@@ -1,0 +1,37 @@
+### model
+model_name_or_path: Qwen/Qwen2.5-Math-7B
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+do_eval: false
+finetuning_type: full
+deepspeed: examples/deepspeed/ds_z3_config.json  # choices: [ds_z0_config.json, ds_z2_config.json, ds_z3_config.json]
+
+### dataset
+dataset: WebInstruct-CFT-50K
+dataset_dir: ../data
+template: qwen
+cutoff_len: 2048
+max_samples: 100000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: output_models/qwen2.5-math-7B-cft_WebInstruct-CFT-50K
+logging_steps: 1
+save_steps: 2
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: true
+
+### train
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 8
+learning_rate: 5.0e-6
+num_train_epochs: 1.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000

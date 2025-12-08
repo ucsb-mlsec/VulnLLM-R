@@ -1,0 +1,51 @@
+[
+    {
+        "model_name_or_path": "Qwen/Qwen2.5-1.5B-Instruct",
+        "run_name": "sft",
+        "dataset": "DS-Noisy-N,DS-Clean-N,DS-OSS-N,QWQ-OSS-N,QWQ-Clean-N,QWQ-Noisy-N",
+        "nproc_per_node": 2,
+        "enabled": false
+    },
+    {
+        "model_name_or_path": "secmlr/DS-Noisy-N_DS-Clean-N_DS-OSS-N_QWQ-OSS-N_QWQ-Clean-N_QWQ-Noisy-N_Qwen2.5-1.5B-Instruct_sft",
+        "run_name": "sft",
+        "dataset": "simplier_reasoning_ds_clean_32k,simplier_reasoning_ds_noisy_32k,simplier_reasoning_ds_ossfuzz_32k,simplier_reasoning_qwq_clean_32k,simplier_reasoning_qwq_noisy_small_32k,simplier_reasoning_qwq_ossfuzz_32k",
+        "nproc_per_node": 2,
+        "push_to_hub_model_id": "Qwen2.5-1.5B-final_model",
+        "enabled": false
+    },
+    {
+        "model_name_or_path": "meta-llama/Llama-3.2-3B-Instruct",
+        "run_name": "sft",
+        "dataset": "DS-Noisy-N,DS-Clean-N,DS-OSS-N,QWQ-OSS-N,QWQ-Clean-N,QWQ-Noisy-N",
+        "nproc_per_node": 2,
+        "test_enabled": false,
+        "enabled": false
+    },
+    {
+        "model_name_or_path": "secmlr/DS-Noisy-N_DS-Clean-N_DS-OSS-N_QWQ-OSS-N_QWQ-Clean-N_QWQ-Noisy-N_Llama-3.2-3B-Instruct_sft",
+        "run_name": "sft",
+        "dataset": "simplier_reasoning_ds_clean_32k,simplier_reasoning_ds_noisy_32k,simplier_reasoning_ds_ossfuzz_32k,simplier_reasoning_qwq_clean_32k,simplier_reasoning_qwq_noisy_small_32k,simplier_reasoning_qwq_ossfuzz_32k",
+        "nproc_per_node": 2,
+        "push_to_hub_model_id": "Llama-3.2-3B-final_model",
+        "test_enabled": false,
+        "enabled": false
+    },
+        {
+        "model_name_or_path": "openai/gpt-oss-20b",
+        "run_name": "sft",
+        "dataset": "DS-Noisy-N,DS-Clean-N,DS-OSS-N,QWQ-OSS-N,QWQ-Clean-N,QWQ-Noisy-N",
+        "nproc_per_node": 6,
+        "test_enabled": false,
+        "enabled": true
+    },
+    {
+        "model_name_or_path": "secmlr/DS-Noisy-N_DS-Clean-N_DS-OSS-N_QWQ-OSS-N_QWQ-Clean-N_QWQ-Noisy-N_gpt-oss-20b_sft",
+        "run_name": "sft",
+        "dataset": "simplier_reasoning_ds_clean_32k,simplier_reasoning_ds_noisy_32k,simplier_reasoning_ds_ossfuzz_32k,simplier_reasoning_qwq_clean_32k,simplier_reasoning_qwq_noisy_small_32k,simplier_reasoning_qwq_ossfuzz_32k",
+        "nproc_per_node": 6,
+        "push_to_hub_model_id": "gpt-oss-20b-final_model",
+        "test_enabled": false,
+        "enabled": true
+    }
+]

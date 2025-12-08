@@ -1,0 +1,47 @@
+### model
+model_name_or_path: Qwen/Qwen2.5-32B-Instruct
+use_unsloth_gc: true
+enable_liger_kernel: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_target: all
+lora_rank: 8
+lora_alpha: 16
+lora_dropout: 0.1
+deepspeed: examples/deepspeed/ds_z3_config.json
+
+### dataset
+dataset: Sky-T1-HF
+dataset_dir: ../data
+template: qwen
+cutoff_len: 32768
+max_samples: 1000000
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: ./result/lora_32B
+logging_steps: 1
+save_steps: 400
+plot_loss: true
+
+### train
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 12
+learning_rate: 1.0e-5
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true
+ddp_timeout: 180000000
+
+### eval
+#val_size: 0.1
+#per_device_eval_batch_size: 1
+#eval_strategy: steps
+#eval_steps: 500
+report_to: wandb
+run_name: Lora-32B

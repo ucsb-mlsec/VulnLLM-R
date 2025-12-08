@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[project]
+name = "vulscan"
+version = "0.1.0"
+description = "Vulnerability scanning tool"
+requires-python = ">=3.9"
+dependencies = [
+    "wandb~=0.19.5",
+    "aiolimiter~=1.2.1",
+    "python-dotenv~=1.0.1",
+    "orjson~=3.10.6",
+    "PyYAML~=6.0.2",
+    "loguru~=0.7.3",
+    "deepspeed~=0.16.5",
+    "liger-kernel",
+    "vllm==0.8.2"
+]
+
+[project.optional-dependencies]
+baseline = ["dspy"]
+dev = ["black", "isort", "flake8"]
