@@ -1,68 +1,3 @@
-## 📝 🧑‍💻 TODO
-
-- [ ] add <think> tag to qwen distil ds model
-- [ ] add static analysis method
-- [ ] add latency as metric
-- [x] python data with related CWEs (yuzhou)
-- [x] write a global class for calling the model (hongwei)
-- filter add wrong reasoning
--
-    - model and model_name consistent
-
-- secmlr/R-VD-DS-Clean-8k_R-VD-QWQ-Clean-8k_R-VD-QWQ-Noisy-Small-8k_Qwen2.5-7B-Instruct_full_sft_1e-5
--
-
-## 🤗 Datasets and models already on huggingface
-
-- Model
-    - deepseek-reasoner (deepseek.com)
-    - together-deepseek-reasoner (use --together_deepseek)
-    - claude-3-7-sonnet-20250219
-    - o3-mini
-    - gpt-4o
-    - NovaSky-AI/Sky-T1-32B-Preview (Flash)
-    - Qwen/QwQ-32B-Preview
-    - simplescaling/s1.1-32B
-    - deepseek-ai/DeepSeek-R1-Distill-Qwen-7B (32B)
-    - Qwen/Qwen2.5-7B-Instruct (32B)
-    - Qwen/Qwen2.5-Coder-7B-Instruct (32B)
-- new models
-    - **secmlr/QWQ-JAVA_DS-JAVA_final_model_sft**
-- No policy
-    - secmlr/final_model_no_policy
-    - secmlr/Qwen2.5-1.5B-final_model
-    - secmlr/Llama-3.2-3B-final_model
-    - secmlr/llama-3.1-8b-final_model
-- summarize
-    - secmlr/ruizhe_simplier_dsNoisy32kCln32k_DSCln_QWQCln_Qwen2.5-7B_summarized_sft
-    - secmlr/ruizhe_simplier_dsNsy32kCln32k_QwQNsy32kCln32k_DSCln_QWQCln_Qwen7B_summarized_sft
-    - secmlr/ruizhe_simplier_dsNsy32kCln32k_QwQNsy32kCln32k_DSNsyCln_QWQNsyCln_Qwen7B_summarized_sft
-    - secmlr/ruizhe_simplier_dsNoisy32kCln32k_DSNoisyCln_QWQNoisyCln_Qwen2.5-7B_summarized_sft
-    - secmlr/ruizhe_simplier_DSQWQNsy32kCln32kOss32k_DSNsyClnOss_QWQNsyClnOss_Qwen_Con-7B_summarized_sft
-- new dataset
-    - secmlr/noisy_dataset_ds_correct_together-deepseek-reasoner_small_train_len_32000_inputlen_16000
-    - secmlr/clean_dataset_ds_correct_together-deepseek-reasoner_train_len_32000_inputlen_16000
-    - secmlr/ossfuzz_dataset_ds_correct_together-deepseek-reasoner_train_len_32000_inputlen_16000
-    - secmlr/ossfuzz_dataset_ds_correct_QwQ-32B_train_len_32000_inputlen_16000
-    - secmlr/clean_dataset_ds_correct_QwQ-32B_train_len_32000_inputlen_16000
-    - secmlr/noisy_dataset_ds_correct_QwQ-32B_small_train_len_32000_inputlen_16000
-    - secmlr/clean_dataset_ds_correct_together-deepseek-reasoner_java_len_32000_inputlen_16000
-    - secmlr/clean_dataset_ds_correct_QwQ-32B_java_len_32000_inputlen_16000
-- no policy
-    - secmlr/noisy_dataset_ds_correct_together-deepseek-reasoner_small_train_len_32000_inputlen_16000_n
-    - secmlr/clean_dataset_ds_correct_together-deepseek-reasoner_train_len_32000_inputlen_16000_n
-    - secmlr/ossfuzz_dataset_ds_correct_together-deepseek-reasoner_train_len_32000_inputlen_16000_n
-    - secmlr/ossfuzz_dataset_ds_correct_QwQ-32B_train_len_32000_inputlen_16000_n
-    - secmlr/clean_dataset_ds_correct_QwQ-32B_train_len_32000_inputlen_16000_n
-    - secmlr/noisy_dataset_ds_correct_QwQ-32B_small_train_len_32000_inputlen_16000_n
-- constitution
-    - secmlr/clean_dataset_ds_QwQ-32B-constitution_train_len_8000_inputlen_5000
-    - secmlr/clean_dataset_ds_QwQ-32B-constitution_train_len_16000_inputlen_5000
-- Direct dataset
-    - secmlr/noisy_dataset_ds_correct_direct_QwQ-32B_small_train_len_32000_inputlen_16000
-    - secmlr/clean_dataset_ds_correct_direct_QwQ-32B_train_len_32000_inputlen_16000
-    - secmlr/ossfuzz_dataset_ds_correct_direct_QwQ-32B_train_len_32000_inputlen_16000
-
 ## Environment and dataset
 
 ### 🛠️ Create environment
@@ -311,3 +246,14 @@ python generate_constitution.py --model gpt-4o --input_dir results/train --outpu
 ```
 
 
+## Citation
+
+```bibtex
+@article{nie2025vulnllmrspecializedreasoningllm,
+      title={VulnLLM-R: Specialized Reasoning LLM with Agent Scaffold for Vulnerability Detection}, 
+      author={Yuzhou Nie and Hongwei Li and Chengquan Guo and Ruizhe Jiang and Zhun Wang and Bo Li and Dawn Song and Wenbo Guo},
+      year={2025},
+      journal={arXiv preprint arXiv:2512.07533},
+      url={https://arxiv.org/abs/2512.07533}, 
+}
+```
