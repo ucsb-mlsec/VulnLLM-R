@@ -3,6 +3,7 @@
 *   **Paper:** [arXiv:2512.07533](https://arxiv.org/abs/2512.07533)
 *   **Code & Data:** [GitHub](https://github.com/ucsb-mlsec/VulnLLM-R)
 *   **Demo:** [Web demo](https://huggingface.co/spaces/UCSB-SURFI/VulnLLM-R)
+*   **Model:** [7B Model](https://huggingface.co/UCSB-SURFI/VulnLLM-R-7B)
 
 <img width="400" alt="model_size_vs_f1_scatter_01" src="https://github.com/user-attachments/assets/fc9e6942-14f8-4f34-8229-74596b05c7c5" />
 
