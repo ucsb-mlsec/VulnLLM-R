@@ -6,7 +6,7 @@ import random
 
 import orjson
 import torch
-import wandb
+
 
 from vulscan.utils.get_cwe_info import get_cwe_info
 from vulscan.utils.sys_prompts import (
@@ -25,6 +25,7 @@ def save_results(file_path, examples, use_wandb=False):
     with open(file_path, "wb") as f:
         f.write(orjson.dumps(examples, option=orjson.OPT_INDENT_2, default=str))
     if use_wandb:
+        import wandb
         wandb.save(file_path)
 
 
@@ -82,6 +83,7 @@ def calculate_score(tp, fp, fn, tn, test_samples_num, use_wandb, wrong_num=0):
 
     # upload these results to wandb
     if use_wandb:
+        import wandb
         wandb.log(
             {
                 "test/false_positive_rate": fpr,
