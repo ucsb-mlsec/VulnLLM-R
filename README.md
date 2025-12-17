@@ -56,7 +56,7 @@ python -m vulscan.test.test --output_dir results/test_data --dataset_path ./data
 
 # [optional] draw plot to compare with other models
 python plots/plot_language_comparison_models.py --results-dir results/test_data
-python plots/plot_model_size_scatter.py --results-dir results/test_data # this plot may look because the text may overlap with the scatter. You can adjust the text positions manually.
+python plots/plot_model_size_scatter.py --results-dir results/test_data # Note: Labels may overlap with scatter points. Adjust text positions manually if needed.
 ```
 
 ## Existing Distilled Datasets
@@ -68,6 +68,8 @@ We also provide the reduced reasoning version of the distilled datasets:
 
 - [Reduced-Distill-DeepSeek](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-DeepSeek)
 - [Reduced-Distill-QwQ](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-QwQ)
+
+## Technical Details
 
 ### 📚 Construct training and testing datasets
 
