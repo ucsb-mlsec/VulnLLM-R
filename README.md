@@ -61,21 +61,13 @@ python -m vulscan.test.test --output_dir results/test_data --dataset_path ./data
 
 ## Existing Distilled Datasets
 
-- [Distill-DeepSeek-Repo](https://huggingface.co/datasets/UCSB-SURFI/Distill-DeepSeek-Repo)
-- [Distill-DeepSeek-Hard](https://huggingface.co/datasets/UCSB-SURFI/Distill-DeepSeek-Hard)
-- [Distill-DeepSeek-Easy](https://huggingface.co/datasets/UCSB-SURFI/Distill-DeepSeek-Easy)
-- [Distill-QwQ-Repo](https://huggingface.co/datasets/UCSB-SURFI/Distill-QwQ-Repo)
-- [Distill-QwQ-Hard](https://huggingface.co/datasets/UCSB-SURFI/Distill-QwQ-Hard)
-- [Distill-QwQ-Easy](https://huggingface.co/datasets/UCSB-SURFI/Distill-QwQ-Easy)
+- [Distill-DeepSeek](https://huggingface.co/datasets/UCSB-SURFI/Distill-DeepSeek)
+- [Distill-QwQ](https://huggingface.co/datasets/UCSB-SURFI/Distill-QwQ)
 
 We also provide the reduced reasoning version of the distilled datasets:
 
-- [Reduced-Distill-DeepSeek-Repo](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-DeepSeek-Repo)
-- [Reduced-Distill-DeepSeek-Hard](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-DeepSeek-Hard)
-- [Reduced-Distill-DeepSeek-Easy](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-DeepSeek-Easy)
-- [Reduced-Distill-QwQ-Repo](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-QwQ-Repo)
-- [Reduced-Distill-QwQ-Hard](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-QwQ-Hard)
-- [Reduced-Distill-QwQ-Easy](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-QwQ-Easy)
+- [Reduced-Distill-DeepSeek](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-DeepSeek)
+- [Reduced-Distill-QwQ](https://huggingface.co/datasets/UCSB-SURFI/Reduced-Distill-QwQ)
 
 ### 📚 Construct training and testing datasets
 
