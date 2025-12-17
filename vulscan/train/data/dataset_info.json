@@ -56,7 +56,7 @@
         }
     },
     "VD-Constitution": {
-        "hf_hub_url": "UCSB-SURFI/Constitution",
+        "hf_hub_url": "https://huggingface.co/datasets/UCSB-SURFI/Constitution",
         "formatting": "sharegpt",
         "columns": {
             "messages": "conversations",
