@@ -54,9 +54,9 @@ python -m vulscan.test.test --output_dir results/test_data --dataset_path ./data
 # use ./run_test.sh -h for more options
 ./vulscan/test/run_test.sh -o results/test_data -t 2 # -o means output directory, -t means tensor parallelism
 
-
 # [optional] draw plot to compare with other models
 python plots/plot_language_comparison_models.py --results-dir results/test_data
+python plots/plot_model_size_scatter.py --results-dir results/test_data # this plot may look because the text may overlap with the scatter. You can adjust the text positions manually.
 ```
 
 ## Existing Distilled Datasets
