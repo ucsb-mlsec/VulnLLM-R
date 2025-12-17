@@ -59,6 +59,14 @@ pip install -e .
 python -m vulscan.test.test --output_dir results/test_data --dataset_path ./datasets/test/function_level/ ./datasets/test/repo_level/ --language python c java --model UCSB-SURFI/VulnLLM-R-7B --requests_per_minute 1000 --save --use_cot --batch_size 4 --tp 2 --vllm --max_tokens 8192 --random_cwe
 ```
 
+## Existing Distilled Datasets
+
+- [Distill-DeepSeek-Repo](https://huggingface.co/datasets/UCSB-SURFI/Distill-DeepSeek-Repo)
+- [Distill-DeepSeek-Hard](https://huggingface.co/datasets/UCSB-SURFI/Distill-DeepSeek-Hard)
+- [Distill-DeepSeek-Easy](https://huggingface.co/datasets/UCSB-SURFI/Distill-DeepSeek-Easy)
+- [Distill-QwQ-Repo](https://huggingface.co/datasets/UCSB-SURFI/Distill-QwQ-Repo)
+- [Distill-QwQ-Hard](https://huggingface.co/datasets/UCSB-SURFI/Distill-QwQ-Hard)
+- [Distill-QwQ-Easy](https://huggingface.co/datasets/UCSB-SURFI/Distill-QwQ-Easy)
 ### 📚 Construct training and testing datasets
 
 Merge existing function-level vulnerability detection datasets:
