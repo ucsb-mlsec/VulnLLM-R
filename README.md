@@ -47,8 +47,16 @@ pip install -e .
 ## For Reproducing Our Results
 
 ```shell
-# for reproduce VulnLLM-R-7B's results
+# generate VulnLLM-R-7B's results
 python -m vulscan.test.test --output_dir results/test_data --dataset_path ./datasets/test/function_level/ ./datasets/test/repo_level/ --language python c java --model UCSB-SURFI/VulnLLM-R-7B --requests_per_minute 1000 --save --use_cot --batch_size 4 --tp 2 --vllm --max_tokens 8192 --random_cwe
+
+# [optional] generate other models' results with our shell script 
+# use ./run_test.sh -h for more options
+./vulscan/test/run_test.sh -o results/test_data -t 2 # -o means output directory, -t means tensor parallelism
+
+
+# [optional] draw plot to compare with other models
+python plots/plot_language_comparison_models.py --results-dir results/test_data
 ```
 
 ## Existing Distilled Datasets
