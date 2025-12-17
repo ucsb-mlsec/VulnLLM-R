@@ -9,6 +9,7 @@ max_tokens=8192
 n=1
 test_data="./datasets/test/function_level/ ./datasets/test/repo_level/"
 language="c python java"
+specified_model=""
 
 usage() {
   echo "Usage: $0 [options]"
@@ -21,11 +22,12 @@ usage() {
   echo "  -n NUM       Number of samples (default: $n)"
   echo "  -d PATH      Test data path (default: $test_data)"
   echo "  -l LANGS     Languages (default: $language)"
+  echo "  -M MODEL     Specify model to run (default: run all models)"
   echo "  -h           Show this help message"
   exit 1
 }
 
-while getopts "o:r:b:t:g:m:n:d:l:h" opt; do
+while getopts "o:r:b:t:g:m:n:d:l:M:h" opt; do
   case $opt in
     o) output_dir="$OPTARG" ;;
     r) requests_per_minute="$OPTARG" ;;
@@ -35,6 +37,7 @@ while getopts "o:r:b:t:g:m:n:d:l:h" opt; do
     n) n="$OPTARG" ;;
     d) test_data="$OPTARG" ;;
     l) language="$OPTARG" ;;
+    M) specified_model="$OPTARG" ;;
     h) usage ;;
     *) usage ;;
   esac
@@ -61,6 +64,7 @@ models=(
     "gpt-4o"
     "o3-mini"
     "claude-3-7-sonnet-20250219"
+    "gemini/gemini-3-flash-preview"
 )
 commercial_models=(
   "together-deepseek-reasoner"
@@ -84,8 +88,15 @@ cd "$(pwd | grep -q '/vulscan/test$' && echo '.' || echo './vulscan/test')" || e
 realpath_value=$(realpath ../../)
 export PYTHONPATH=$PYTHONPATH:$realpath_value
 
+# Use specified model or all models
+if [[ -n "$specified_model" ]]; then
+  run_models=("$specified_model")
+else
+  run_models=("${models[@]}")
+fi
+
 # Iterate over models
-for model in "${models[@]}"; do
+for model in "${run_models[@]}"; do
   echo "Running model: $model"
 
   if is_commercial_model "$model"; then
@@ -93,8 +104,8 @@ for model in "${models[@]}"; do
     if [[ "$model" == *deepseek-reasoner* ]]; then
       python test.py \
         --output_dir "$output_dir" \
-        --dataset_path "$test_data" \
-        --language "$language" \
+        --dataset_path $test_data \
+        --language $language \
         --model "$model" \
         --requests_per_minute "$requests_per_minute" \
         --save --use_cot --use_policy \
@@ -103,8 +114,8 @@ for model in "${models[@]}"; do
     else
       python test.py \
         --output_dir "$output_dir" \
-        --dataset_path "$test_data" \
-        --language "$language" \
+        --dataset_path $test_data \
+        --language $language \
         --model "$model" \
         --requests_per_minute "$requests_per_minute" \
         --save --use_cot --use_policy \
@@ -114,8 +125,8 @@ for model in "${models[@]}"; do
   else
     python test.py \
       --output_dir "$output_dir" \
-      --dataset_path "$test_data" \
-      --language "$language" \
+      --dataset_path $test_data \
+      --language $language \
       --model "$model" \
       --requests_per_minute "$requests_per_minute" \
       --save --use_cot --use_policy \

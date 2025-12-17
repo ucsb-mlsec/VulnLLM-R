@@ -259,6 +259,7 @@ if __name__ == "__main__":
         or "o3" in base_model
         or "claude" in base_model
         or "deepseek-reasoner" in base_model
+        or "gemini" in base_model
     ):
         limiter = AsyncLimiter(args.requests_per_minute, 60)
         model = LiteLLMModel(
