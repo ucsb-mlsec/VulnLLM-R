@@ -14,9 +14,7 @@
 - git clone the repository
 
 ```shell
-git clone --recursive https://github.com/ucsb-mlsec/VulnLLM-R.git
-# or you can update the submodule after cloning
-git submodule update --init --recursive
+git clone https://github.com/ucsb-mlsec/VulnLLM-R.git
 ```
 
 - Create a new conda environment
@@ -28,8 +26,7 @@ conda create -n vulnscan python=3.11
 - Install the required packages
 
 ```shell
-pip install torch
-pip install -r requirements.txt
+pip install -e .
 ```
 
 - Install LLaMA-Factory
@@ -43,12 +40,6 @@ pip install -e .
 
 ```shell
 cd ../../../vulscan/model_zoo
-pip install -e .
-```
-
-- Install the current repository
-
-```shell
 pip install -e .
 ```
 

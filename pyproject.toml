@@ -25,8 +25,13 @@ dependencies = [
     "loguru~=0.7.3",
     "deepspeed~=0.16.5",
     "liger-kernel",
-    "vllm==0.8.2"
+    "vllm==0.8.2",
+    "pandas",
+    "torch"
 ]
+
+[tool.setuptools.packages.find]
+where = ["vulscan"]
 
 [project.optional-dependencies]
 baseline = ["dspy"]
