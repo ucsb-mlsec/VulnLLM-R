@@ -21,6 +21,7 @@ git clone https://github.com/ucsb-mlsec/VulnLLM-R.git
 
 ```shell
 conda create -n vulnscan python=3.11
+conda activate vulnscan
 ```
 
 - Install the required packages
