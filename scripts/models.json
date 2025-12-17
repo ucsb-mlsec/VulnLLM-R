@@ -2,221 +2,23 @@
     {
         "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
         "run_name": "sft",
-        "dataset": "DS-Noisy-N,DS-Clean-N,DS-OSS-N,QWQ-OSS-N,QWQ-Clean-N,QWQ-Noisy-N",
+        "dataset": "VD-Distill-QwQ,VD-Distill-DeepSeek",
         "nproc_per_node": 2,
         "enabled": false
     },
     {
         "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
         "run_name": "sft",
-        "dataset": "DS-Noisy,DS-Clean,DS-OSS,QWQ-OSS,QWQ-Clean,QWQ-Noisy,Con",
-        "nproc_per_node": 4,
-        "enabled": true
-    },
-    {
-        "model_name_or_path": "secmlr/final_model",
-        "run_name": "sft",
-        "dataset": "QWQ-JAVA,DS-JAVA",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "secmlr/final_model",
-        "run_name": "sft",
-        "dataset": "QWQ-RED,DS-RED",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Noisy,DS-Clean,DS-OSS",
+        "dataset": "VD-Distill-QwQ,VD-Distill-DeepSeek,VD-Constitution",
         "nproc_per_node": 2,
         "enabled": false
     },
     {
         "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
         "run_name": "full_sft_1e-5",
-        "dataset": "QWQ-OSS,QWQ-Clean,QWQ-Noisy",
+        "dataset": "VD-Distill-QwQ,VD-Distill-DeepSeek,VD-Reduced-Distill-QwQ,VD-Reduced-Distill-DeepSeek,VD-Constitution",
         "nproc_per_node": 2,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "sft",
-        "dataset": "DS-Noisy-N,DS-Clean-N,QWQ-Clean-N,QWQ-Noisy-N",
-        "nproc_per_node": 2,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Noisy,DS-Clean,DS-OSS,QWQ-OSS,QWQ-Clean,QWQ-Noisy",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Noisy,DS-Clean,QWQ-Noisy,QWQ-Clean",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-3B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Noisy,DS-Clean,QWQ-Noisy,QWQ-Clean",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-0.5B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Noisy,DS-Clean,QWQ-Noisy,QWQ-Clean",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Noisy,DS-Clean,QWQ-Noisy,QWQ-Clean",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "agentica-org/DeepCoder-14B-Preview",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Noisy,DS-Clean,QWQ-Noisy,QWQ-Clean",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "DS-Clean,QWQ-Clean",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "QWQ-OSS-D,QWQ-Clean-D,QWQ-Noisy-D",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "QWQ-Clean-D,QWQ-Noisy-D",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "QWQ-Clean-D",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "Sky-T1-Filtered,VD-DS-Clean-8k,VD-QWQ-Clean-8k",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-1.5B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-DS-Clean-8k,VD-DS-Clean-16k",
-        "nproc_per_node": 1,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-QWQ-Clean-8k,VD-QWQ-Clean-16k",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "2_full_sft_1e-5",
-        "dataset": "VD-DS-Clean-8k,VD-QWQ-Clean-8k,VD-QWQ-Noisy-Small-8k",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "R-VD-DS-Clean-8k,R-VD-QWQ-Clean-8k,R-VD-QWQ-Noisy-Small-8k",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-DS-Clean-8k,VD-QWQ-Clean-8k,VD-QWQ-Noisy-Small-16k",
-        "nproc_per_node": 2,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-QWQ-Clean-16k",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-QWQ-Clean-8k",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-DS-Clean-8k,VD-QWQ-Clean-8k",
-        "dataset_full_name": "secmlr/clean_dataset_filtered_together-deepseek-reasoner_train_len_8000_inputlen_5000,secmlr/clean_dataset_filtered_QwQ-32B-Preview_train_len_8000_inputlen_5000",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-DS-Clean-16k",
-        "dataset_full_name": "secmlr/clean_dataset_filtered_together-deepseek-reasoner_train_len_16000_inputlen_5000",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-DS-Clean-16k,VD-QWQ-Clean-16k",
-        "dataset_full_name": "secmlr/clean_dataset_filtered_together-deepseek-reasoner_train_len_16000_inputlen_5000,secmlr/clean_dataset_filtered_QwQ-32B-Preview_train_len_16000_inputlen_5000",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "Qwen/Qwen2.5-7B-Instruct",
-        "run_name": "full_sft_1e-5",
-        "dataset": "Sky-T1-Filtered,VD-DS-Clean-16k,VD-QWQ-Clean-16k",
-        "nproc_per_node": 4,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-DS-DSFormat-Clean-8k,VD-DS-DSFormat-Clean-16k",
-        "nproc_per_node": 2,
-        "enabled": false
-    },
-    {
-        "model_name_or_path": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
-        "run_name": "full_sft_1e-5",
-        "dataset": "VD-DS-DSFormat-Clean-8k,VD-DS-DSFormat-Clean-16k",
-        "nproc_per_node": 2,
+        "push_to_hub_model_id": "My-VulnLLM-R-7B",
         "enabled": false
     }
 ]

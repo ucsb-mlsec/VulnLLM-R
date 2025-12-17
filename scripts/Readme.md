@@ -9,7 +9,7 @@ python train_test.py --models_config models.json
 ```shell 
 python train_test.py \
    --model_list Qwen/Qwen2.5-7B-Instruct meta-llama/Llama-2-7b-hf \
-   --dataset VD-QWQ-Clean-8k \
+   --dataset VD-Distill-QwQ \
    --run_name model_sft_1e-5
 ```
 
@@ -18,7 +18,7 @@ python train_test.py \
 ```shell
 python train_test.py \
   --model_name_or_path Qwen/Qwen2.5-7B-Instruct \
-  --dataset VD-QWQ-Clean-8k \
+  --dataset VD-Distill-QwQ \
   --run_name qwen2_7B_full_sft_1e-5 \
   --nproc_per_node 4
 
