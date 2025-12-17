@@ -8,7 +8,7 @@ from pathlib import Path
 
 import orjson
 import torch
-import wandb
+
 from aiolimiter import AsyncLimiter
 from dotenv import load_dotenv
 from model_zoo.huggingface_model import HuggingFaceModel
@@ -372,6 +372,7 @@ if __name__ == "__main__":
                 ood_dict[language] = []
 
             if args.wandb:
+                import wandb
                 name = f"{dataset_path}_eval_{name}"
                 wandb.init(project="patch_llm", name=name, entity="rucnyz")
 
