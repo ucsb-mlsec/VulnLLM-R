@@ -14,7 +14,7 @@
 - git clone the repository
 
 ```shell
-git clone --recursive https://github.com/rucnyz/VulnScan-r0.git
+git clone --recursive https://github.com/ucsb-mlsec/VulnLLM-R.git
 # or you can update the submodule after cloning
 git submodule update --init --recursive
 ```
