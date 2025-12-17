@@ -1,13 +1,11 @@
 # VulnLLM-R: Specialized Reasoning LLM for Vulnerability Detection
 
-*   **Paper:** [arXiv:2512.07533](https://arxiv.org/abs/2512.07533)
-*   **Code & Data:** [GitHub](https://github.com/ucsb-mlsec/VulnLLM-R)
-*   **Demo:** [Web demo](https://huggingface.co/spaces/UCSB-SURFI/VulnLLM-R)
-*   **Model:** [7B Model](https://huggingface.co/UCSB-SURFI/VulnLLM-R-7B)
+* **Paper:** [arXiv:2512.07533](https://arxiv.org/abs/2512.07533)
+* **Code & Data:** [GitHub](https://github.com/ucsb-mlsec/VulnLLM-R)
+* **Demo:** [Web demo](https://huggingface.co/spaces/UCSB-SURFI/VulnLLM-R)
+* **Model:** [7B Model](https://huggingface.co/UCSB-SURFI/VulnLLM-R-7B)
 
 <img width="400" alt="model_size_vs_f1_scatter_01" src="https://github.com/user-attachments/assets/fc9e6942-14f8-4f34-8229-74596b05c7c5" />
-
-
 
 ## Environment and dataset
 
@@ -52,6 +50,13 @@ pip install -e .
 
 ```shell
 pip install -e .
+```
+
+## For Reproducing Our Results
+
+```shell
+# for reproduce VulnLLM-R-7B's results
+python -m vulscan.test.test --output_dir results/test_data --dataset_path ./datasets/test/function_level/ ./datasets/test/repo_level/ --language python c java --model UCSB-SURFI/VulnLLM-R-7B --requests_per_minute 1000 --save --use_cot --batch_size 4 --tp 2 --vllm --max_tokens 8192 --random_cwe
 ```
 
 ### 📚 Construct training and testing datasets
@@ -182,7 +187,7 @@ python reformat_ds.py \
 --filter_input_length 16000 \
 --filter_all_length 32000 \
 --push_to_hub \
---push_to_hub_organization secmlr # push dataset to huggingface dataset hub
+--push_to_hub_organization secmlr \
 --filter_correct_only 
 ```
 
@@ -255,7 +260,6 @@ python -m vulscan.test.test_existing_json \
 ```shell
 python generate_constitution.py --model gpt-4o --input_dir results/train --output_dir results/train/constitution
 ```
-
 
 ## Citation
 
