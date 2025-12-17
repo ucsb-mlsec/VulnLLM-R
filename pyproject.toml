@@ -27,7 +27,11 @@ dependencies = [
     "liger-kernel",
     "vllm==0.8.2",
     "pandas",
-    "torch"
+    "torch",
+    "adjustText",
+    "tree-sitter==0.21.3",
+    "tree-sitter-languages==1.10.2",
+    "docker"
 ]
 
 [tool.setuptools.packages.find]

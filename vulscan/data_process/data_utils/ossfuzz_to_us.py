@@ -127,10 +127,16 @@ def infer_cwe(crash_type, sanitizer_output):
         return "CWE-119"
     return None
 
+parser = argparse.ArgumentParser(description="Group converted data by CWE ID")
+parser.add_argument("--vuln-dir", type=str, default="./vuln", help="Directory to store CWE grouped JSON files")
+parser.add_argument("--patched-dir", type=str, default="./patched", help="Directory to store patched CWE grouped JSON files")
+parser.add_argument("--data-dir", type=str, default="./arvo_raw_data", help="Directory to store data")
+args = parser.parse_args()
+
 # Step 1: Process new converted_data
 vuln_data = []
 patched_data = []
-data_dir = "data_new_train"
+data_dir = args.data_dir
 for filename in os.listdir(data_dir):
     if not filename.endswith(".json"):
         continue
@@ -244,10 +250,6 @@ for filename in os.listdir(data_dir):
 
 
 # Step 2: Group and write
-parser = argparse.ArgumentParser(description="Group converted data by CWE ID")
-parser.add_argument("--vuln-dir", type=str, default="./vuln", help="Directory to store CWE grouped JSON files")
-parser.add_argument("--patched-dir", type=str, default="./patched", help="Directory to store patched CWE grouped JSON files")
-args = parser.parse_args()
 
 os.makedirs(args.vuln_dir, exist_ok=True)
 os.makedirs(args.patched_dir, exist_ok=True)
