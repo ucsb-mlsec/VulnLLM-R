@@ -27,21 +27,7 @@ conda activate vulnscan
 - Install the required packages
 
 ```shell
-pip install -e .
-```
-
-- Install LLaMA-Factory
-
-```shell
-cd vulscan/train/LLaMA-Factory
-pip install -e .
-```
-
-- Install model_zoo
-
-```shell
-cd ../../../vulscan/model_zoo
-pip install -e .
+pip install -e . -e ./vulscan/train/LLaMA-Factory -e ./vulscan/model_zoo
 ```
 
 ## For Reproducing Our Results
