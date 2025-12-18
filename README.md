@@ -142,8 +142,6 @@ saved
 in `datasets/reasoning_data`.
 
 ```shell
-cd ./VulnScan-r0
-export PYTHONPATH=$PYTHONPATH:$PWD
 cd vulscan/data_process/generate_reasoning
 ```
 
@@ -207,9 +205,6 @@ python reformat_ds.py \
 --push_to_hub_organization secmlr \
 --filter_correct_only 
 ```
-
-`archive` has some python scripts that are not useful. For example, `reformat_ds.py` is used to reformat the dataset for
-the deepseek model, but we always encountered the format issue when fine-tuning deepseek models.
 
 # for dpo dataset
 
