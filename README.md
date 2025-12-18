@@ -79,7 +79,8 @@ Merge existing function-level vulnerability detection datasets:
 PrimeVul [<a href="https://github.com/DLVulDet/PrimeVul">1</a>],
 SecCodePLT [<a href="http://seccodeplt.github.io/">2</a>],
 Juliet [<a href="https://samate.nist.gov/SARD/test-suites/112">3</a>],
-and Sven [<a href="https://github.com/eth-sri/sven">4</a>].
+Sven [<a href="https://github.com/eth-sri/sven">4</a>],
+and Arvo [<a href="https://github.com/n132/ARVO-Meta">5</a>]. 
 Within these datasets, PrimeVul has the most complicated functions.
 We create two training sets: clean (without PrimeVul) and noisy (with PrimeVul),
 so we can train on relatively simple datasets and test on the complex PrimeVul dataset.
@@ -90,6 +91,8 @@ It is a relatively arbitrary name we used at the beginning.
   datasets.
     - ```raw_to_us.py```: Merge the raw data into our dataset and remove redundant data
     - ```check_cwe_correct.py```: Compute the accuracy for each CWE category
+    - ```generate_arvo_raw_data.py```: Generate structured raw data from arvo dataset
+    - ```arvo_to_us.py```: Reformat arvo structured raw data to our dataset format
     - ```split_good_bad_for_juliet.py```: Extract data from the raw Juliet 1.3 dataset and convert it into the required
       format, which forms part of our c clean_dataset
     - ```add_sven_to_clean_dataset.py```: Extract data from the Sven dataset, forming part of our C clean dataset
