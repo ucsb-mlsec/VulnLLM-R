@@ -128,7 +128,6 @@ It is a relatively arbitrary name we used at the beginning.
 | Hard (PrimeVul, SecLLMHolmes) | C/C++    | Test       | 13 (5 ood)  | 145      | 152     | 4545           |
 | Long Context (Oss-fuzz)       | C/C++    | Test       | 3 (0 ood)   | 0        | 320     | 18929          |
 | primevul test (noisy)         | C/C++    | Test       | 56 (34 ood) | 421      | 422     | 5341           |
-
 | PrimeVul (Noisy) | C/C++ | Small train | 27 | 45561 | 3593 |
 | PrimeVul (Noisy) | C/C++ | Test | 56 (37 ood) | 421 | 421 |
 
