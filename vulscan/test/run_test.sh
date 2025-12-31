@@ -70,6 +70,7 @@ commercial_models=(
   "together-deepseek-reasoner"
   "gpt-4o"
   "gpt-4o-2024-11-20"
+  "gpt-5"
   "o3-mini"
   "claude-3-7-sonnet-20250219"
   "deepseek/deepseek-reasoner"
