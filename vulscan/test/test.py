@@ -255,7 +255,7 @@ if __name__ == "__main__":
         print("Setting requests per minute to 10 for claude")
 
     if (
-        "gpt-4o" in base_model
+        "gpt-" in base_model
         or "o3" in base_model
         or "claude" in base_model
         or "deepseek-reasoner" in base_model
