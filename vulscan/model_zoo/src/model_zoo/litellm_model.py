@@ -94,7 +94,7 @@ class LiteLLMModel(LanguageModel):
             answers.append(example["output"] if "output" in example else None)
 
         # Run asynchronous batch chat completions
-        if hasattr(self, "reasoning_effort"):
+        if getattr(self, "reasoning_effort", None):
             temperature = 1
             reasoning_effort = self.reasoning_effort
             top_p = None

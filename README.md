@@ -11,10 +11,13 @@
 
 ### 🛠️ Create environment
 
-- git clone the repository
+- Install [Git LFS](https://git-lfs.com/) and clone the repository (LFS files are fetched automatically during clone)
 
 ```shell
+git lfs install          # one-time setup
 git clone https://github.com/ucsb-mlsec/VulnLLM-R.git
+cd VulnLLM-R
+# If you cloned before installing Git LFS, run: git lfs pull
 ```
 
 - Create a new conda environment
@@ -48,8 +51,9 @@ python -m vulscan.test.test_hf \
 # remember to add your API keys to .env file if you want to run commercial models
 # use ./run_test.sh -h for more options
 ./vulscan/test/run_test.sh -o results/test_data -t 2 # -o means output directory, -t means tensor parallelism
-./vulscan/test/run_test.sh -o results/test_data -M o3-mini # -m means model name, which runs only one model.
-./vulscan/test/run_test.sh -o results/test_data -M gpt-5 # -m means model name, which runs only one model.
+./vulscan/test/run_test.sh -o results/test_data -M o3-mini # -M means model name, which runs only one model.
+./vulscan/test/run_test.sh -o results/test_data -M gpt-5.4 -e high # -e sets reasoning effort (e.g., none/low/medium/high/xhigh)
+./vulscan/test/run_test.sh -o results/test_data -M claude-opus-4-6 -e high
 
 # [optional] draw plot to compare with other models
 python plots/plot_language_comparison_models.py --results-dir results/test_data
@@ -197,12 +201,14 @@ python reformat_ds.py \
 --filter_correct_only 
 ```
 
-# for dpo dataset
+For DPO dataset:
 
+```shell
 python generate_dpo.py \
 --tp 2 --dataset_type clean_dataset \
 --batch_size 200 --n 8 --training_set train \
 --model secmlr/VD-QWQ-Clean-8k_qwen2_7B_full_sft_1e-5
+```
 
 ## 🤖 SFT and DPO Training
 
@@ -213,10 +219,6 @@ results will be saved in `results/test_qwen/results.json` directory.
 ## 🔍 Test the trained models
 
 If you want to reproduce our results, you can run the following command:
-
-```shell
-./vulscan/test/run_test.sh test.log
-```
 
 ```shell
 # open-source model
